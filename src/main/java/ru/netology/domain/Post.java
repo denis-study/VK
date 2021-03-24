@@ -1,147 +1,183 @@
 package ru.netology.domain;
 
-// Информация о посте
 public class Post {
 
-    public int getPostId() {
-        return postId;
+    private int postID;
+    private int FromID;
+    private int ownerID;  //id владельца стены. на которой размещена запись
+    private int postTime;// дата в формате unixtime
+    private String text;
+    private int replyOwnerID;
+    private int replyPostID;
+    private int signedID; //если от имени сообщества, но подписано автором
+    private boolean canPin;
+    private boolean canDelete;
+    private boolean canEdit;
+    private boolean isPinned;
+    private boolean markedAsAds;
+    private boolean isFavourite;
+    private String postType;
+
+    private CommentsInfo commentsInfo;
+    private LikesInfo likesInfo;
+    private ViewsInfo viewsInfo;
+    private GeoInfo geoInfo;
+    private RepostsInfo repostsInfo;
+
+
+    public int getPostID() {
+        return postID;
+    }
+    public void setPostID(int postID) {
+        this.postID = postID;
     }
 
-    public void setPostId(int postId) {
-        this.postId = postId;
+
+    public int getAuthorID() {
+        return FromID;
+    }
+    public void setAuthorID(int fromID) {
+        FromID = fromID;
     }
 
-    public String getPostType() {
-        return postType;
+
+    public int getOwnerID() {
+        return ownerID;
+    }
+    public void setOwnerID(int ownerID) {
+        this.ownerID = ownerID;
     }
 
-    public void setPostType(String postType) {
-        this.postType = postType;
+
+    public int getPostTime() {
+        return postTime;
     }
+    public void setPostTime(int postTime) {
+        this.postTime = postTime;
+    }
+
 
     public String getText() {
         return text;
     }
-
     public void setText(String text) {
         this.text = text;
     }
 
-    public int getFromId() {
-        return fromId;
+
+    public int getReplyOwnerID() {
+        return replyOwnerID;
+    }
+    public void setReplyOwnerID(int replyOwnerID) {
+        this.replyOwnerID = replyOwnerID;
     }
 
-    public void setFromId(int fromId) {
-        this.fromId = fromId;
+
+    public int getReplyPostID() {
+        return replyPostID;
+    }
+    public void setReplyPostID(int replyPostID) {
+        this.replyPostID = replyPostID;
     }
 
-    public int getDate() {
-        return date;
+
+    public int getSignedID() {
+        return signedID;
+    }
+    public void setSignedID(int signedID) {
+        this.signedID = signedID;
     }
 
-    public void setDate(int date) {
-        this.date = date;
+
+    public boolean isCanPin() {
+        return canPin;
+    }
+    public void setCanPin(boolean canPin) {
+        this.canPin = canPin;
     }
 
-    public int getViewCount() {
-        return viewCount;
+
+    public boolean isCanDelete() {
+        return canDelete;
+    }
+    public void setCanDelete(boolean canDelete) {
+        this.canDelete = canDelete;
     }
 
-    public void setViewCount(int viewCount) {
-        this.viewCount = viewCount;
+
+    public boolean isCanEdit() {
+        return canEdit;
+    }
+    public void setCanEdit(boolean canEdit) {
+        this.canEdit = canEdit;
     }
 
-    public int getReplyOwnerId() {
-        return replyOwnerId;
-    }
-
-    public void setReplyOwnerId(int replyOwnerId) {
-        this.replyOwnerId = replyOwnerId;
-    }
-
-    public int getSignerId() {
-        return signerId;
-    }
-
-    public void setSignerId(int signerId) {
-        this.signerId = signerId;
-    }
-
-    public int getReplyPostId() {
-        return replyPostId;
-    }
-
-    public void setReplyPostId(int replyPostId) {
-        this.replyPostId = replyPostId;
-    }
 
     public boolean isPinned() {
         return isPinned;
     }
-
     public void setPinned(boolean pinned) {
         isPinned = pinned;
     }
 
-    public boolean isFavorite() {
-        return isFavorite;
+
+    public boolean isMarkedAsAds() {
+        return markedAsAds;
+    }
+    public void setMarkedAsAds(boolean markedAsAds) {
+        this.markedAsAds = markedAsAds;
     }
 
-    public void setFavorite(boolean favorite) {
-        isFavorite = favorite;
+
+    public boolean isFavourite() {
+        return isFavourite;
+    }
+    public void setFavourite(boolean favourite) {
+        isFavourite = favourite;
     }
 
-    public int getRepostsCount() {
-        return repostsCount;
+
+    public String getPostType() {
+        return postType;
+    }
+    public void setPostType(String postType) {
+        this.postType = postType;
     }
 
-    public void setRepostsCount(int repostsCount) {
-        this.repostsCount = repostsCount;
+
+    public CommentsInfo getCommentsInfo() {
+        return commentsInfo;
+    }
+    public void setCommentsInfo(CommentsInfo commentsInfo) {
+        this.commentsInfo = commentsInfo;
     }
 
-    public boolean isUserReposted() {
-        return userReposted;
+    public LikesInfo getLikesInfo() {
+        return likesInfo;
+    }
+    public void setLikesService(LikesInfo likesInfo) {
+        this.likesInfo = likesInfo;
     }
 
-    public void setUserReposted(boolean userReposted) {
-        this.userReposted = userReposted;
+    public ViewsInfo getViewsInfo() {
+        return viewsInfo;
+    }
+    public void setViewsInfo(ViewsInfo viewsInfo) {
+        this.viewsInfo = viewsInfo;
     }
 
-    public String getTypeGeo() {
-        return typeGeo;
+    public GeoInfo getGeoInfo() {
+        return geoInfo;
+    }
+    public void setGeoInfo(GeoInfo geoInfo) {
+        this.geoInfo = geoInfo;
     }
 
-    public void setTypeGeo(String typeGeo) {
-        this.typeGeo = typeGeo;
+    public RepostsInfo getRepostsInfo() {
+        return repostsInfo;
     }
-
-    public String getCoordinatesGeo() {
-        return coordinatesGeo;
+    public void setRepostsInfo(RepostsInfo repostsInfo) {
+        this.repostsInfo = repostsInfo;
     }
-
-    public void setCoordinatesGeo(String coordinatesGeo) {
-        this.coordinatesGeo = coordinatesGeo;
-    }
-
-    //информация о записи
-    private int postId; // идентификатор записи
-    private String postType; // тип записи со значениями (post, copy, reply, postpone, suggest)
-    private String text; // текст записи
-    private int fromId; // идентификатор автора записи
-    private int date; // время публикации записи
-    private int viewCount; // число просмотров записи
-    private int replyOwnerId; // идентификатор владельца записи, в ответ на которую, была оставлена текущая
-    private int signerId;// идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем
-    private int replyPostId; // идентификатор записи, в ответ на которую, была оставлена текущая
-    private boolean isPinned; // информация о том, что запись закреплена
-    private boolean isFavorite; // запись добавлена в закладки у текущего пользователя
-
-
-    // информация о репостах записи («Рассказать друзьям»)
-    private int repostsCount; // число пользователей, скопировавших запись
-    private boolean userReposted; // наличие репоста от текущего пользователя
-
-    // информация о местоположении
-    private String typeGeo; // тип места
-    private String coordinatesGeo; // координаты места
 }
+
